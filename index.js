@@ -17,13 +17,13 @@ client.on('ready', () => {
 });
 client.on('message',async (message)=>{
     console.log("meaasage is ",message,"\n");
-    let chat = await message.getChat();
+    const chat = await message.getChat();
     console.log("chat is ",chat,"\n");
     if(message.body==='$addthischat'){
         range.push(chat.id._serialized)
     }
     if((range.find(elm=>elm===chat.id._serialized))!==undefined){
-        handleMsg(message);
+        handleMsg(message,chat);
     }
 })
 
