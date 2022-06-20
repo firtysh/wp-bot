@@ -5,7 +5,9 @@ import { range } from './config/config.js';
 const {Client,LocalAuth} =pkg;
 
 const client = new Client({
-    authStrategy: new LocalAuth({dataPath:"./auth_data"}) // ./auth_data is the path where session data is stored for session restoration
+    authStrategy: new LocalAuth({dataPath:"./auth_data"}), // ./auth_data is the path where session data is stored for session restoration
+    puppeteer:{headless:true,
+    args:['--no-sandbox']}
 });
 
 client.on('qr', (qr) => {
