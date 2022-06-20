@@ -69,6 +69,8 @@ export const handleMsg = (m, chat) => {
       rep(
         'Please specify student data properly\ni.e. $addstdnt {"name":"Full Name",\n"roll":"full roll no",\n"id":"last two digit of roll",\n"reg_no":"registration no",\n"dob":"dd/mm/yyyy"}'
       );
+      send('Just copy and edit 😉');
+      send('$addstdnt {"name":"Suman Mandal",\n"roll":"2010110XXXX",\n"id":"XX",\n"reg_no":"2010101002100XX",\n"dob":"XX/XX/2003"}')
     }
   } else if (cmd === "getstdnt") {                    // cmd= get student
     if (msg === undefined) {
@@ -92,7 +94,8 @@ export const handleMsg = (m, chat) => {
         }
       } catch (e) {}
     }
-  } else {                                           // cmd=
-    rep("INVALID COMMAND");
-  }
+  } 
+  // else {                                           // cmd=
+  //   rep("INVALID COMMAND");
+  // }
 };
