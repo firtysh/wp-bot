@@ -2,7 +2,7 @@ import qrcode from 'qrcode-terminal'
 import pkg from 'whatsapp-web.js';
 import {handleMsg} from './settings/handler.js'
 import { range } from './config/config.js';
-const {Client,LocalAuth} =pkg;
+const {Client,LocalAuth,MessageMedia} =pkg;
 
 const client = new Client({
     authStrategy: new LocalAuth({dataPath:"./auth_data"}), // ./auth_data is the path where session data is stored for session restoration
